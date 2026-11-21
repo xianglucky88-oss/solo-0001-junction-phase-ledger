@@ -1,0 +1,198 @@
+{
+  "controller": "ctrl",
+  "phase_order": [
+    "N",
+    "E"
+  ],
+  "clock_certificates": [
+    {
+      "id": "clock-c",
+      "device": "ctrl",
+      "ticks": [
+        0,
+        1000
+      ],
+      "offset_ms": 0,
+      "error_ms": 2
+    },
+    {
+      "id": "clock-d",
+      "device": "loop",
+      "ticks": [
+        0,
+        400
+      ],
+      "offset_ms": 0,
+      "error_ms": 1
+    },
+    {
+      "id": "clock-x",
+      "device": "side",
+      "ticks": [
+        0,
+        1000
+      ],
+      "offset_ms": 0,
+      "error_ms": 0
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "seq": 0,
+      "tick": 10,
+      "phase": "N"
+    },
+    {
+      "id": "e1",
+      "seq": 1,
+      "tick": 100,
+      "phase": "E"
+    },
+    {
+      "id": "e2",
+      "seq": 2,
+      "tick": 200,
+      "phase": "N"
+    },
+    {
+      "id": "e3",
+      "seq": 3,
+      "tick": 300,
+      "phase": "E"
+    },
+    {
+      "id": "e5",
+      "seq": 5,
+      "tick": 500,
+      "phase": "N"
+    },
+    {
+      "id": "e6",
+      "seq": 6,
+      "tick": 600,
+      "phase": "E"
+    }
+  ],
+  "wiring": [
+    {
+      "id": "wire-old",
+      "detector": "loop",
+      "phase": "N",
+      "time_ms": [
+        0,
+        250
+      ]
+    },
+    {
+      "id": "wire-new",
+      "detector": "loop",
+      "phase": "E",
+      "time_ms": [
+        250,
+        700
+      ]
+    },
+    {
+      "id": "wire-side",
+      "detector": "side",
+      "phase": "E",
+      "time_ms": [
+        0,
+        700
+      ]
+    }
+  ],
+  "heartbeats": [
+    {
+      "id": "h1",
+      "detector": "loop",
+      "ticks": [
+        10,
+        61
+      ]
+    },
+    {
+      "id": "h2",
+      "detector": "loop",
+      "ticks": [
+        62,
+        310
+      ]
+    },
+    {
+      "id": "h3",
+      "detector": "side",
+      "ticks": [
+        105,
+        240
+      ]
+    },
+    {
+      "id": "h4",
+      "detector": "side",
+      "ticks": [
+        390,
+        450
+      ]
+    }
+  ],
+  "arrivals": [
+    {
+      "id": "a-green",
+      "detector": "loop",
+      "tick": 60
+    },
+    {
+      "id": "a-edge",
+      "detector": "loop",
+      "tick": 100
+    },
+    {
+      "id": "a-red",
+      "detector": "loop",
+      "tick": 130
+    },
+    {
+      "id": "a-rewire",
+      "detector": "loop",
+      "tick": 250
+    },
+    {
+      "id": "a-new",
+      "detector": "loop",
+      "tick": 305
+    },
+    {
+      "id": "a-gap",
+      "detector": "side",
+      "tick": 420
+    },
+    {
+      "id": "a-offline",
+      "detector": "side",
+      "tick": 380
+    },
+    {
+      "id": "a-unknown-clock",
+      "detector": "loop",
+      "tick": 405
+    }
+  ],
+  "buckets": [
+    {
+      "id": "full",
+      "time_ms": [
+        0,
+        700
+      ]
+    },
+    {
+      "id": "short",
+      "time_ms": [
+        50,
+        140
+      ]
+    }
+  ]
+}
