@@ -1,4 +1,5 @@
 from .clock import Clocks
+from .closure import simulate
 from .common import pieces, scalar, span, unique
 from .observed import collect, inside, touch
 from .service import reconstruct
@@ -44,4 +45,5 @@ def materialize(doc):
     for cycle in cycles:
         cycle['statistics'] = summarize(cycle['certain'], phases, coverage, arrivals)
     return {'services': service, 'unusable_edges': gaps, 'cycles': cycles, 'coverage': coverage,
-            'arrivals': arrivals, 'buckets': reports}
+            'arrivals': arrivals, 'buckets': reports,
+            'closure_simulations': simulate(doc, coverage)}

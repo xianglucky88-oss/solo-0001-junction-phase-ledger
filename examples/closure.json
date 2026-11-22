@@ -1,0 +1,452 @@
+{
+  "controller": "ctrl",
+  "phase_order": [
+    "N",
+    "E"
+  ],
+  "clock_certificates": [
+    {
+      "id": "clock-c",
+      "device": "ctrl",
+      "ticks": [
+        0,
+        1000
+      ],
+      "offset_ms": 0,
+      "error_ms": 2
+    },
+    {
+      "id": "clock-d",
+      "device": "loop",
+      "ticks": [
+        0,
+        400
+      ],
+      "offset_ms": 0,
+      "error_ms": 1
+    },
+    {
+      "id": "clock-x",
+      "device": "side",
+      "ticks": [
+        0,
+        1000
+      ],
+      "offset_ms": 0,
+      "error_ms": 0
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "seq": 0,
+      "tick": 10,
+      "phase": "N"
+    },
+    {
+      "id": "e1",
+      "seq": 1,
+      "tick": 100,
+      "phase": "E"
+    },
+    {
+      "id": "e2",
+      "seq": 2,
+      "tick": 200,
+      "phase": "N"
+    },
+    {
+      "id": "e3",
+      "seq": 3,
+      "tick": 300,
+      "phase": "E"
+    }
+  ],
+  "wiring": [
+    {
+      "id": "wire-old",
+      "detector": "loop",
+      "phase": "N",
+      "time_ms": [
+        0,
+        250
+      ]
+    },
+    {
+      "id": "wire-new",
+      "detector": "loop",
+      "phase": "E",
+      "time_ms": [
+        250,
+        700
+      ]
+    },
+    {
+      "id": "wire-side",
+      "detector": "side",
+      "phase": "E",
+      "time_ms": [
+        0,
+        700
+      ]
+    }
+  ],
+  "heartbeats": [
+    {
+      "id": "h1",
+      "detector": "loop",
+      "ticks": [
+        10,
+        62
+      ]
+    },
+    {
+      "id": "h2",
+      "detector": "loop",
+      "ticks": [
+        59,
+        310
+      ]
+    },
+    {
+      "id": "h0",
+      "detector": "side",
+      "ticks": [
+        15,
+        110
+      ]
+    },
+    {
+      "id": "h3",
+      "detector": "side",
+      "ticks": [
+        105,
+        240
+      ]
+    },
+    {
+      "id": "h4",
+      "detector": "side",
+      "ticks": [
+        390,
+        450
+      ]
+    }
+  ],
+  "arrivals": [],
+  "buckets": [
+    {
+      "id": "full",
+      "time_ms": [
+        0,
+        700
+      ]
+    }
+  ],
+  "turns": [
+    {
+      "id": "N-left",
+      "phase": "N"
+    },
+    {
+      "id": "N-thru",
+      "phase": "N"
+    },
+    {
+      "id": "E-left",
+      "phase": "E"
+    },
+    {
+      "id": "E-thru",
+      "phase": "E"
+    }
+  ],
+  "count_windows": [
+    {
+      "id": "b1-loop-total",
+      "batch": "b1",
+      "detector": "loop",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "total",
+      "turns": [
+        "N-left",
+        "N-thru"
+      ],
+      "count": 10
+    },
+    {
+      "id": "b1-nl-sub",
+      "batch": "b1",
+      "detector": "loop",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "N-left"
+      ],
+      "count": 4
+    },
+    {
+      "id": "b1-nt-sub",
+      "batch": "b1",
+      "detector": "loop",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "N-thru"
+      ],
+      "count": 6
+    },
+    {
+      "id": "b2-loop-total",
+      "batch": "b2",
+      "detector": "loop",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "total",
+      "turns": [
+        "N-left",
+        "N-thru"
+      ],
+      "count": 10
+    },
+    {
+      "id": "b2-nl-sub",
+      "batch": "b2",
+      "detector": "loop",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "N-left"
+      ],
+      "count": 3
+    },
+    {
+      "id": "b2-nt-sub",
+      "batch": "b2",
+      "detector": "loop",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "N-thru"
+      ],
+      "count": 7
+    },
+    {
+      "id": "el-sub",
+      "batch": "e1",
+      "detector": "side",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "E-left"
+      ],
+      "count": 2
+    },
+    {
+      "id": "et-sub",
+      "batch": "e1",
+      "detector": "side",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "E-thru"
+      ],
+      "count": 5
+    },
+    {
+      "id": "side-unbatched",
+      "detector": "side",
+      "time_ms": [
+        20,
+        240
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "E-left"
+      ],
+      "count": 9
+    },
+    {
+      "id": "side-gap",
+      "batch": "g1",
+      "detector": "side",
+      "time_ms": [
+        390,
+        460
+      ],
+      "scope": "subtotal",
+      "turns": [
+        "E-left"
+      ],
+      "count": 1
+    },
+    {
+      "id": "side-total-gap",
+      "batch": "g2",
+      "detector": "side",
+      "time_ms": [
+        390,
+        460
+      ],
+      "scope": "total",
+      "turns": [
+        "E-left",
+        "E-thru"
+      ],
+      "count": 3
+    },
+    {
+      "id": "loop-rewire",
+      "batch": "r1",
+      "detector": "loop",
+      "time_ms": [
+        200,
+        300
+      ],
+      "scope": "total",
+      "turns": [
+        "N-left",
+        "E-thru"
+      ],
+      "count": 8
+    }
+  ],
+  "closures": [
+    {
+      "id": "cl-1",
+      "time_ms": [
+        20,
+        240
+      ],
+      "restrictions": [
+        {
+          "turn": "N-left",
+          "cap": 5
+        },
+        {
+          "turn": "E-left",
+          "cap": 2
+        }
+      ]
+    },
+    {
+      "id": "cl-2",
+      "time_ms": [
+        200,
+        300
+      ],
+      "restrictions": [
+        {
+          "turn": "N-thru",
+          "cap": 3
+        },
+        {
+          "turn": "E-thru",
+          "cap": 4
+        }
+      ]
+    },
+    {
+      "id": "cl-3",
+      "time_ms": [
+        390,
+        460
+      ],
+      "restrictions": [
+        {
+          "turn": "E-left",
+          "cap": 1
+        },
+        {
+          "turn": "E-thru",
+          "cap": 4
+        }
+      ]
+    }
+  ],
+  "demand_plans": [
+    {
+      "id": "plan-ok",
+      "closure": "cl-1",
+      "demands": {
+        "N-left": 4,
+        "N-thru": 6,
+        "E-left": 2,
+        "E-thru": 5
+      }
+    },
+    {
+      "id": "plan-cap",
+      "closure": "cl-1",
+      "demands": {
+        "N-left": 6,
+        "N-thru": 6,
+        "E-left": 2,
+        "E-thru": 5
+      }
+    },
+    {
+      "id": "plan-batch",
+      "closure": "cl-1",
+      "demands": {
+        "N-left": 4,
+        "N-thru": 7,
+        "E-left": 2,
+        "E-thru": 5
+      }
+    },
+    {
+      "id": "plan-null",
+      "closure": "cl-1",
+      "demands": {
+        "N-left": 4,
+        "N-thru": 6,
+        "E-left": null,
+        "E-thru": 5
+      }
+    },
+    {
+      "id": "plan-blind",
+      "closure": "cl-2",
+      "demands": {
+        "N-left": null,
+        "N-thru": null,
+        "E-left": null,
+        "E-thru": null
+      }
+    },
+    {
+      "id": "plan-side-blind",
+      "closure": "cl-3",
+      "demands": {
+        "N-left": null,
+        "N-thru": null,
+        "E-left": null,
+        "E-thru": null
+      }
+    }
+  ]
+}

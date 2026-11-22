@@ -13,6 +13,8 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     subs = parser.add_subparsers(dest='command', required=True)
     subs.add_parser('preview', help='compute results without writing an archive').add_argument('bundle', type=Path)
+    sim = subs.add_parser('simulate', help='evaluate lane-closure demand plans only')
+    sim.add_argument('bundle', type=Path)
     rel = subs.add_parser('publish', help='commit one immutable edition')
     rel.add_argument('bundle', type=Path)
     rel.add_argument('archive', type=Path)
@@ -25,11 +27,13 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         match args.command:
-            case 'preview' | 'publish':
+            case 'preview' | 'publish' | 'simulate':
                 doc = decode(args.bundle.read_text(encoding='utf-8'))
                 require(isinstance(doc, dict), 'bundle must be an object')
                 result = materialize(doc)
-                if args.command == 'publish':
+                if args.command == 'simulate':
+                    result = result['closure_simulations']
+                elif args.command == 'publish':
                     result = publish(args.archive, args.edition, doc, result)
             case 'history':
                 result = history(args.archive)
