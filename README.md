@@ -14,4 +14,13 @@ python3 -m greenbook replay ledger.sqlite revised
 
 `preview` 不写库；`show` 读已发布成果，`source` 读随版封存的输入，`replay` 重算并核对。`publish` 不覆盖已用版名。命令在输入错误时以状态 2 退出，不发布结果。重复演示请换版名或用新库。
 
-样本字段及成果口径见 [PROJECT_SPEC.md](PROJECT_SPEC.md)。这里的规则仅用于合成数据，并非真实业务规范。
+走廊配对（上游计数器批次与下游有证到达）随 `corridors`/`counter_batches` 两个字段启用，缺一则拒绝；无这两个字段时成果结构与旧版完全一致。两份验收输入证据相同、站点绿灯率同为 1/2，仅批次可配对关系不同：
+
+```sh
+python3 -I tests/gen_fixtures.py
+python3 -m greenbook preview tests/fixtures/corridor_contention.json
+python3 -m greenbook preview tests/fixtures/corridor_disjoint.json
+python3 -I tests/test_corridor.py
+```
+
+争用输入的确定绿灯范围为 [0,1]，分离输入为 [1,1]，二者配对量均为 3、无证书批次 1 辆单列不按零处理。规则细节见 [PROJECT_SPEC.md](PROJECT_SPEC.md)。这里的规则仅用于合成数据，并非真实业务规范。

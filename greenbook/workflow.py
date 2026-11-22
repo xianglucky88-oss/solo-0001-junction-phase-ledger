@@ -1,5 +1,6 @@
 from .clock import Clocks
 from .common import pieces, scalar, span, unique
+from .corridor import build_corridors
 from .observed import collect, inside, touch
 from .service import reconstruct
 
@@ -43,5 +44,9 @@ def materialize(doc):
                for k, r in sorted(unique(doc['buckets']).items())}
     for cycle in cycles:
         cycle['statistics'] = summarize(cycle['certain'], phases, coverage, arrivals)
-    return {'services': service, 'unusable_edges': gaps, 'cycles': cycles, 'coverage': coverage,
-            'arrivals': arrivals, 'buckets': reports}
+    corridors = build_corridors(doc, clocks, arrivals)
+    result = {'services': service, 'unusable_edges': gaps, 'cycles': cycles, 'coverage': coverage,
+              'arrivals': arrivals, 'buckets': reports}
+    if corridors:
+        result['corridors'] = corridors
+    return result
