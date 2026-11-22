@@ -23,7 +23,7 @@ def supporting_heartbeats(at, sections):
     return []
 
 
-def collect(wirings, heartbeats, arrivals, phases, services, clocks):
+def collect(wirings, heartbeats, arrivals, phases, services, clocks, ring_of_phase=None):
     wire_by_detector, hb_by_detector = {}, {}
     for key, row in unique(wirings).items():
         require(row['phase'] in phases, f'unknown wiring phase: {key}')
@@ -58,10 +58,13 @@ def collect(wirings, heartbeats, arrivals, phases, services, clocks):
         if not refs:
             facts.append(dict(fact, state='out_of_observation', phase=phase, wiring=wire))
             continue
-        compatible = [s for s in services if touch(at, s['possible'])]
+        ring = ring_of_phase.get(phase) if ring_of_phase else None
+        peers = [s for s in services if ring is None or s.get('ring') == ring]
+        compatible = [s for s in peers if touch(at, s['possible'])]
         certain = next((s for s in compatible if inside(at, s['certain'])), None)
         state = ('green' if certain['phase'] == phase else 'not_green') if certain else (
             'ambiguous_service' if compatible else 'unproved_service')
         facts.append(dict(fact, state=state, phase=phase, wiring=wire, heartbeat_refs=refs,
-                          service_refs=[s['edges'][0] for s in compatible]))
+                          service_refs=[s['edges'][0] for s in compatible],
+                          **({'ring': ring} if ring is not None else {})))
     return coverage, facts

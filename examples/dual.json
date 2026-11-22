@@ -1,0 +1,232 @@
+{
+  "controller": "ctrl",
+  "rings": [
+    {
+      "id": "ring-a",
+      "controller": "ctrl-a",
+      "phase_order": [
+        "N",
+        "E"
+      ]
+    },
+    {
+      "id": "ring-b",
+      "controller": "ctrl-b",
+      "phase_order": [
+        "S",
+        "W"
+      ]
+    }
+  ],
+  "phase_order": [
+    "N",
+    "E",
+    "S",
+    "W"
+  ],
+  "crossing": {
+    "id": "gate",
+    "rings": {
+      "ring-a": "N",
+      "ring-b": "S"
+    }
+  },
+  "clock_certificates": [
+    {
+      "id": "clock-a",
+      "device": "ctrl-a",
+      "ticks": [
+        0,
+        2000
+      ],
+      "offset_ms": 0,
+      "error_ms": 2
+    },
+    {
+      "id": "clock-b",
+      "device": "ctrl-b",
+      "ticks": [
+        0,
+        2000
+      ],
+      "offset_ms": 0,
+      "error_ms": 2
+    },
+    {
+      "id": "clock-la",
+      "device": "la",
+      "ticks": [
+        0,
+        800
+      ],
+      "offset_ms": 0,
+      "error_ms": 1
+    },
+    {
+      "id": "clock-lb",
+      "device": "lb",
+      "ticks": [
+        0,
+        800
+      ],
+      "offset_ms": 0,
+      "error_ms": 1
+    }
+  ],
+  "edges": [
+    {
+      "id": "a0",
+      "ring": "ring-a",
+      "seq": 0,
+      "tick": 10,
+      "phase": "N"
+    },
+    {
+      "id": "a1",
+      "ring": "ring-a",
+      "seq": 1,
+      "tick": 100,
+      "phase": "E"
+    },
+    {
+      "id": "a2",
+      "ring": "ring-a",
+      "seq": 2,
+      "tick": 200,
+      "phase": "N"
+    },
+    {
+      "id": "a3",
+      "ring": "ring-a",
+      "seq": 3,
+      "tick": 300,
+      "phase": "E"
+    },
+    {
+      "id": "a4",
+      "ring": "ring-a",
+      "seq": 4,
+      "tick": 400,
+      "phase": "N"
+    },
+    {
+      "id": "b0",
+      "ring": "ring-b",
+      "seq": 0,
+      "tick": 20,
+      "phase": "S"
+    },
+    {
+      "id": "b1",
+      "ring": "ring-b",
+      "seq": 1,
+      "tick": 120,
+      "phase": "W"
+    },
+    {
+      "id": "b2",
+      "ring": "ring-b",
+      "seq": 2,
+      "tick": 220,
+      "phase": "S"
+    },
+    {
+      "id": "b3",
+      "ring": "ring-b",
+      "seq": 3,
+      "tick": 320,
+      "phase": "W"
+    },
+    {
+      "id": "b4",
+      "ring": "ring-b",
+      "seq": 4,
+      "tick": 420,
+      "phase": "S"
+    }
+  ],
+  "wiring": [
+    {
+      "id": "wire-la-n",
+      "detector": "la",
+      "phase": "N",
+      "time_ms": [
+        0,
+        400
+      ]
+    },
+    {
+      "id": "wire-la-e",
+      "detector": "la",
+      "phase": "E",
+      "time_ms": [
+        400,
+        800
+      ]
+    },
+    {
+      "id": "wire-lb-s",
+      "detector": "lb",
+      "phase": "S",
+      "time_ms": [
+        0,
+        400
+      ]
+    },
+    {
+      "id": "wire-lb-w",
+      "detector": "lb",
+      "phase": "W",
+      "time_ms": [
+        400,
+        800
+      ]
+    }
+  ],
+  "heartbeats": [
+    {
+      "id": "hb-la",
+      "detector": "la",
+      "ticks": [
+        0,
+        800
+      ]
+    },
+    {
+      "id": "hb-lb",
+      "detector": "lb",
+      "ticks": [
+        0,
+        800
+      ]
+    }
+  ],
+  "arrivals": [
+    {
+      "id": "a-green",
+      "detector": "la",
+      "tick": 60
+    },
+    {
+      "id": "b-green",
+      "detector": "lb",
+      "tick": 60
+    }
+  ],
+  "buckets": [
+    {
+      "id": "early",
+      "time_ms": [
+        0,
+        150
+      ]
+    },
+    {
+      "id": "late",
+      "time_ms": [
+        150,
+        350
+      ]
+    }
+  ]
+}
