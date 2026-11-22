@@ -1,0 +1,81 @@
+{
+  "arrivals": [],
+  "buckets": [
+    {
+      "id": "b000",
+      "time_ms": [
+        0,
+        50
+      ]
+    }
+  ],
+  "clock_certificates": [
+    {
+      "device": "ctrl",
+      "error_ms": 0,
+      "id": "clock-c",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    },
+    {
+      "device": "loop",
+      "error_ms": 0,
+      "id": "clock-d",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    }
+  ],
+  "controller": "ctrl",
+  "edges": [
+    {
+      "id": "e0",
+      "phase": "N",
+      "seq": 0,
+      "tick": 10
+    },
+    {
+      "id": "e1",
+      "phase": "N",
+      "seq": 1,
+      "tick": 30
+    }
+  ],
+  "heartbeats": [
+    {
+      "detector": "loop",
+      "id": "h1",
+      "ticks": [
+        0,
+        10
+      ]
+    },
+    {
+      "detector": "loop",
+      "id": "h2",
+      "ticks": [
+        40,
+        50
+      ]
+    }
+  ],
+  "phase_order": [
+    "N"
+  ],
+  "wiring": [
+    {
+      "detector": "loop",
+      "id": "wire-n",
+      "phase": "N",
+      "time_ms": [
+        0,
+        50
+      ]
+    }
+  ]
+}

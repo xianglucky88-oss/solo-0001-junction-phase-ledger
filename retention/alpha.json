@@ -1,0 +1,282 @@
+{
+  "arrivals": [
+    {
+      "detector": "loop",
+      "id": "a-green",
+      "tick": 60
+    },
+    {
+      "detector": "loop",
+      "id": "a-edge",
+      "tick": 100
+    },
+    {
+      "detector": "loop",
+      "id": "a-red",
+      "tick": 130
+    },
+    {
+      "detector": "loop",
+      "id": "a-rewire",
+      "tick": 250
+    },
+    {
+      "detector": "loop",
+      "id": "a-new",
+      "tick": 305
+    },
+    {
+      "detector": "side",
+      "id": "a-gap",
+      "tick": 420
+    },
+    {
+      "detector": "side",
+      "id": "a-offline",
+      "tick": 380
+    },
+    {
+      "detector": "loop",
+      "id": "a-unknown-clock",
+      "tick": 405
+    }
+  ],
+  "buckets": [
+    {
+      "id": "b000",
+      "time_ms": [
+        0,
+        50
+      ]
+    },
+    {
+      "id": "b050",
+      "time_ms": [
+        50,
+        100
+      ]
+    },
+    {
+      "id": "b100",
+      "time_ms": [
+        100,
+        150
+      ]
+    },
+    {
+      "id": "b150",
+      "time_ms": [
+        150,
+        200
+      ]
+    },
+    {
+      "id": "b200",
+      "time_ms": [
+        200,
+        250
+      ]
+    },
+    {
+      "id": "b250",
+      "time_ms": [
+        250,
+        300
+      ]
+    },
+    {
+      "id": "b300",
+      "time_ms": [
+        300,
+        350
+      ]
+    },
+    {
+      "id": "b350",
+      "time_ms": [
+        350,
+        400
+      ]
+    },
+    {
+      "id": "b400",
+      "time_ms": [
+        400,
+        450
+      ]
+    },
+    {
+      "id": "b450",
+      "time_ms": [
+        450,
+        500
+      ]
+    },
+    {
+      "id": "b500",
+      "time_ms": [
+        500,
+        550
+      ]
+    },
+    {
+      "id": "b550",
+      "time_ms": [
+        550,
+        600
+      ]
+    },
+    {
+      "id": "b600",
+      "time_ms": [
+        600,
+        650
+      ]
+    },
+    {
+      "id": "b650",
+      "time_ms": [
+        650,
+        700
+      ]
+    }
+  ],
+  "clock_certificates": [
+    {
+      "device": "ctrl",
+      "error_ms": 2,
+      "id": "clock-c",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    },
+    {
+      "device": "loop",
+      "error_ms": 1,
+      "id": "clock-d",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        400
+      ]
+    },
+    {
+      "device": "side",
+      "error_ms": 0,
+      "id": "clock-x",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    }
+  ],
+  "controller": "ctrl",
+  "edges": [
+    {
+      "id": "e0",
+      "phase": "N",
+      "seq": 0,
+      "tick": 10
+    },
+    {
+      "id": "e1",
+      "phase": "E",
+      "seq": 1,
+      "tick": 100
+    },
+    {
+      "id": "e2",
+      "phase": "N",
+      "seq": 2,
+      "tick": 200
+    },
+    {
+      "id": "e3",
+      "phase": "E",
+      "seq": 3,
+      "tick": 300
+    },
+    {
+      "id": "e5",
+      "phase": "N",
+      "seq": 5,
+      "tick": 500
+    },
+    {
+      "id": "e6",
+      "phase": "E",
+      "seq": 6,
+      "tick": 600
+    }
+  ],
+  "heartbeats": [
+    {
+      "detector": "loop",
+      "id": "h1",
+      "ticks": [
+        10,
+        61
+      ]
+    },
+    {
+      "detector": "loop",
+      "id": "h2",
+      "ticks": [
+        59,
+        310
+      ]
+    },
+    {
+      "detector": "side",
+      "id": "h3",
+      "ticks": [
+        105,
+        240
+      ]
+    },
+    {
+      "detector": "side",
+      "id": "h4",
+      "ticks": [
+        390,
+        450
+      ]
+    }
+  ],
+  "phase_order": [
+    "N",
+    "E"
+  ],
+  "wiring": [
+    {
+      "detector": "loop",
+      "id": "wire-old",
+      "phase": "N",
+      "time_ms": [
+        0,
+        250
+      ]
+    },
+    {
+      "detector": "loop",
+      "id": "wire-new",
+      "phase": "E",
+      "time_ms": [
+        250,
+        700
+      ]
+    },
+    {
+      "detector": "side",
+      "id": "wire-side",
+      "phase": "E",
+      "time_ms": [
+        0,
+        700
+      ]
+    }
+  ]
+}

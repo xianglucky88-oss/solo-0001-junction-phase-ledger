@@ -1,0 +1,147 @@
+{
+  "arrivals": [],
+  "buckets": [
+    {
+      "id": "b000",
+      "time_ms": [
+        0,
+        50
+      ]
+    },
+    {
+      "id": "b050",
+      "time_ms": [
+        50,
+        100
+      ]
+    }
+  ],
+  "clock_certificates": [
+    {
+      "device": "ctrl",
+      "error_ms": 2,
+      "id": "clock-c",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    },
+    {
+      "device": "loop",
+      "error_ms": 0,
+      "id": "clock-d",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    }
+  ],
+  "controller": "ctrl",
+  "edges": [
+    {
+      "id": "e0",
+      "phase": "N",
+      "seq": 0,
+      "tick": 10
+    },
+    {
+      "id": "e1",
+      "phase": "E",
+      "seq": 1,
+      "tick": 100
+    },
+    {
+      "id": "e2",
+      "phase": "N",
+      "seq": 2,
+      "tick": 200
+    },
+    {
+      "id": "e3",
+      "phase": "E",
+      "seq": 3,
+      "tick": 300
+    },
+    {
+      "id": "e5",
+      "phase": "N",
+      "seq": 5,
+      "tick": 500
+    },
+    {
+      "id": "e6",
+      "phase": "E",
+      "seq": 6,
+      "tick": 600
+    }
+  ],
+  "heartbeats": [
+    {
+      "detector": "loop",
+      "id": "h1",
+      "ticks": [
+        12,
+        30
+      ]
+    },
+    {
+      "detector": "loop",
+      "id": "h2",
+      "ticks": [
+        40,
+        90
+      ]
+    },
+    {
+      "detector": "side",
+      "id": "h3",
+      "ticks": [
+        105,
+        240
+      ]
+    },
+    {
+      "detector": "side",
+      "id": "h4",
+      "ticks": [
+        390,
+        450
+      ]
+    }
+  ],
+  "phase_order": [
+    "N",
+    "E"
+  ],
+  "wiring": [
+    {
+      "detector": "loop",
+      "id": "wire-old",
+      "phase": "N",
+      "time_ms": [
+        0,
+        250
+      ]
+    },
+    {
+      "detector": "loop",
+      "id": "wire-new",
+      "phase": "E",
+      "time_ms": [
+        250,
+        700
+      ]
+    },
+    {
+      "detector": "side",
+      "id": "wire-side",
+      "phase": "E",
+      "time_ms": [
+        0,
+        700
+      ]
+    }
+  ]
+}

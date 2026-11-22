@@ -1,0 +1,102 @@
+{
+  "arrivals": [],
+  "buckets": [
+    {
+      "id": "b000",
+      "time_ms": [
+        0,
+        50
+      ]
+    },
+    {
+      "id": "b050",
+      "time_ms": [
+        50,
+        100
+      ]
+    }
+  ],
+  "clock_certificates": [
+    {
+      "device": "ctrl",
+      "error_ms": 0,
+      "id": "clock-c",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    },
+    {
+      "device": "loop",
+      "error_ms": 0,
+      "id": "clock-d",
+      "offset_ms": 0,
+      "ticks": [
+        0,
+        1000
+      ]
+    }
+  ],
+  "controller": "ctrl",
+  "edges": [
+    {
+      "id": "e0",
+      "phase": "N",
+      "seq": 0,
+      "tick": 0
+    },
+    {
+      "id": "e1",
+      "phase": "E",
+      "seq": 1,
+      "tick": 20
+    },
+    {
+      "id": "e2",
+      "phase": "N",
+      "seq": 2,
+      "tick": 30
+    },
+    {
+      "id": "e5",
+      "phase": "E",
+      "seq": 5,
+      "tick": 100
+    }
+  ],
+  "heartbeats": [
+    {
+      "detector": "loop",
+      "id": "h1",
+      "ticks": [
+        0,
+        50
+      ]
+    }
+  ],
+  "phase_order": [
+    "N",
+    "E"
+  ],
+  "wiring": [
+    {
+      "detector": "loop",
+      "id": "wire-n1",
+      "phase": "N",
+      "time_ms": [
+        0,
+        20
+      ]
+    },
+    {
+      "detector": "loop",
+      "id": "wire-n2",
+      "phase": "N",
+      "time_ms": [
+        30,
+        50
+      ]
+    }
+  ]
+}
