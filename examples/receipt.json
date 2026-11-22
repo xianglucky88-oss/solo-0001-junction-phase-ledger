@@ -1,0 +1,86 @@
+{
+  "edition": "original",
+  "deliverables": [
+    {
+      "type": "evidence",
+      "key": "evidence",
+      "services": [
+        "e0",
+        "e1",
+        "e2"
+      ],
+      "observations": [
+        {
+          "detector": "loop",
+          "wiring": "wire-old",
+          "heartbeat": "h1"
+        },
+        {
+          "detector": "loop",
+          "wiring": "wire-old",
+          "heartbeat": "h2"
+        },
+        {
+          "detector": "loop",
+          "wiring": "wire-new",
+          "heartbeat": "h2"
+        }
+      ],
+      "arrivals": [
+        "a-edge",
+        "a-green",
+        "a-new",
+        "a-red",
+        "a-rewire",
+        "a-unknown-clock"
+      ]
+    },
+    {
+      "type": "cycle",
+      "key": "cycle:e0",
+      "services": [
+        "e0",
+        "e1"
+      ],
+      "observations": [
+        {
+          "detector": "loop",
+          "wiring": "wire-old",
+          "heartbeat": "h1"
+        }
+      ],
+      "arrivals": [
+        "a-edge",
+        "a-green",
+        "a-red"
+      ]
+    },
+    {
+      "type": "bucket_report",
+      "key": "bucket:full",
+      "services": [
+        "e0",
+        "e1"
+      ],
+      "observations": [
+        {
+          "detector": "loop",
+          "wiring": "wire-old",
+          "heartbeat": "h1"
+        }
+      ],
+      "arrivals": [
+        "a-edge",
+        "a-green",
+        "a-red"
+      ]
+    },
+    {
+      "type": "bucket_report",
+      "key": "bucket:short",
+      "arrivals": [
+        "a-green"
+      ]
+    }
+  ]
+}

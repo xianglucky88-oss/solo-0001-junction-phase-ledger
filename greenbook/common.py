@@ -47,6 +47,18 @@ def pieces(a, b):
     return (lo, hi) if lo < hi else None
 
 
+def merge(spans):
+    output = []
+    for lo, hi in sorted(tuple(x) for x in spans):
+        if lo >= hi:
+            continue
+        if output and lo <= output[-1][1]:
+            output[-1][1] = max(output[-1][1], hi)
+        else:
+            output.append([lo, hi])
+    return output
+
+
 def scalar(x):
     q = Fraction(x)
     return q.numerator if q.denominator == 1 else str(q)
