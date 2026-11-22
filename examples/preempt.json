@@ -1,0 +1,93 @@
+{
+  "controller": "ctrl",
+  "phase_order": [
+    "N",
+    "E",
+    "S",
+    "W"
+  ],
+  "clock_certificates": [
+    {
+      "id": "clock-c",
+      "device": "ctrl",
+      "ticks": [
+        0,
+        2000
+      ],
+      "offset_ms": 0,
+      "error_ms": 2
+    },
+    {
+      "id": "clock-d",
+      "device": "loop",
+      "ticks": [
+        0,
+        2000
+      ],
+      "offset_ms": 0,
+      "error_ms": 1
+    }
+  ],
+  "edges": [
+    { "id": "e0", "seq": 0, "tick": 10, "phase": "N" },
+    { "id": "e1", "seq": 1, "tick": 110, "phase": "E" },
+    { "id": "e2", "seq": 2, "tick": 210, "phase": "S" },
+    { "id": "e3", "seq": 3, "tick": 310, "phase": "W" },
+    { "id": "e4", "seq": 4, "tick": 410, "phase": "N" },
+    { "id": "e5", "seq": 5, "tick": 510, "phase": "E" },
+    { "id": "e6", "seq": 6, "tick": 560, "phase": "S" },
+    { "id": "e7", "seq": 7, "tick": 640, "phase": "E" },
+    { "id": "e8", "seq": 8, "tick": 680, "phase": "N" },
+    { "id": "e9", "seq": 9, "tick": 800, "phase": "E" },
+    { "id": "e10", "seq": 10, "tick": 900, "phase": "S" },
+    { "id": "e11", "seq": 11, "tick": 1000, "phase": "W" },
+    { "id": "e12", "seq": 12, "tick": 1100, "phase": "N" },
+    { "id": "e13", "seq": 13, "tick": 1200, "phase": "E" },
+    { "id": "e14", "seq": 14, "tick": 1300, "phase": "S" },
+    { "id": "e15", "seq": 15, "tick": 1400, "phase": "W" },
+    { "id": "e16", "seq": 16, "tick": 1500, "phase": "N" }
+  ],
+  "preemptions": [
+    {
+      "id": "pre-1",
+      "entry_tick": 560,
+      "exit_tick": 800,
+      "resume_phase": "E"
+    }
+  ],
+  "wiring": [
+    {
+      "id": "wire-loop",
+      "detector": "loop",
+      "phase": "N",
+      "time_ms": [
+        0,
+        1600
+      ]
+    }
+  ],
+  "heartbeats": [
+    {
+      "id": "h1",
+      "detector": "loop",
+      "ticks": [
+        10,
+        1550
+      ]
+    }
+  ],
+  "arrivals": [
+    { "id": "a-normal-green", "detector": "loop", "tick": 60 },
+    { "id": "a-during-preempt", "detector": "loop", "tick": 600 },
+    { "id": "a-after-resume", "detector": "loop", "tick": 1150 }
+  ],
+  "buckets": [
+    {
+      "id": "full",
+      "time_ms": [
+        0,
+        1600
+      ]
+    }
+  ]
+}

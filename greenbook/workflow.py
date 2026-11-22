@@ -34,14 +34,30 @@ def summarize(window, phases, coverage, arrivals):
     return output
 
 
+def attach_statistics(segments, phases, coverage, arrivals):
+    for cycle in segments['normal_cycles']:
+        cycle['statistics'] = summarize(cycle['certain'], phases, coverage, arrivals)
+    for partial in segments['normal_partials']:
+        partial['statistics'] = (summarize(partial['certain_ms'], phases, coverage, arrivals)
+                                 if partial['certain_ms'] is not None else None)
+    for preempt in segments['preemptions']:
+        preempt['statistics'] = (summarize(preempt['certain_ms'], phases, coverage, arrivals)
+                                 if preempt['certain_ms'] is not None else None)
+    for unknown in segments['unclassified']:
+        unknown['statistics'] = (summarize(unknown['certain_ms'], phases, coverage, arrivals)
+                                 if unknown['certain_ms'] is not None else None)
+
+
 def materialize(doc):
     clocks = Clocks(doc['clock_certificates'])
     phases = doc['phase_order']
-    service, gaps, cycles = reconstruct(doc['controller'], phases, doc['edges'], clocks)
+    service, gaps, cycles, segments = reconstruct(doc['controller'], phases, doc['edges'],
+                                                  clocks, doc.get('preemptions'))
     coverage, arrivals = collect(doc['wiring'], doc['heartbeats'], doc['arrivals'], phases, service, clocks)
     reports = {k: summarize(span(r['time_ms'], 'report bucket'), phases, coverage, arrivals)
                for k, r in sorted(unique(doc['buckets']).items())}
     for cycle in cycles:
         cycle['statistics'] = summarize(cycle['certain'], phases, coverage, arrivals)
-    return {'services': service, 'unusable_edges': gaps, 'cycles': cycles, 'coverage': coverage,
-            'arrivals': arrivals, 'buckets': reports}
+    attach_statistics(segments, phases, coverage, arrivals)
+    return {'services': service, 'unusable_edges': gaps, 'cycles': cycles, 'segments': segments,
+            'coverage': coverage, 'arrivals': arrivals, 'buckets': reports}
