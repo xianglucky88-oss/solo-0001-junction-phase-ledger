@@ -1,6 +1,7 @@
 from .clock import Clocks
 from .common import pieces, scalar, span, unique
 from .observed import collect, inside, touch
+from .rotation import analyze_rotation
 from .service import reconstruct
 
 DESCRIPTION = 'Reconstruct offline single-ring phase and arrival evidence.'
@@ -38,10 +39,16 @@ def materialize(doc):
     clocks = Clocks(doc['clock_certificates'])
     phases = doc['phase_order']
     service, gaps, cycles = reconstruct(doc['controller'], phases, doc['edges'], clocks)
-    coverage, arrivals = collect(doc['wiring'], doc['heartbeats'], doc['arrivals'], phases, service, clocks)
+    rotation_entries, reconstructed = analyze_rotation(doc, gaps, clocks, phases)
+    service_with_reconstruction = service + reconstructed
+    coverage, arrivals = collect(doc['wiring'], doc['heartbeats'], doc['arrivals'],
+                                 phases, service_with_reconstruction, clocks)
     reports = {k: summarize(span(r['time_ms'], 'report bucket'), phases, coverage, arrivals)
                for k, r in sorted(unique(doc['buckets']).items())}
     for cycle in cycles:
         cycle['statistics'] = summarize(cycle['certain'], phases, coverage, arrivals)
-    return {'services': service, 'unusable_edges': gaps, 'cycles': cycles, 'coverage': coverage,
-            'arrivals': arrivals, 'buckets': reports}
+    result = {'services': service_with_reconstruction, 'unusable_edges': gaps, 'cycles': cycles,
+              'coverage': coverage, 'arrivals': arrivals, 'buckets': reports}
+    if rotation_entries is not None:
+        result['rotation_gaps'] = rotation_entries
+    return result

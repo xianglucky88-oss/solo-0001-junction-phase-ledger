@@ -59,7 +59,7 @@ def collect(wirings, heartbeats, arrivals, phases, services, clocks):
             facts.append(dict(fact, state='out_of_observation', phase=phase, wiring=wire))
             continue
         compatible = [s for s in services if touch(at, s['possible'])]
-        certain = next((s for s in compatible if inside(at, s['certain'])), None)
+        certain = next((s for s in compatible if s['certain'] is not None and inside(at, s['certain'])), None)
         state = ('green' if certain['phase'] == phase else 'not_green') if certain else (
             'ambiguous_service' if compatible else 'unproved_service')
         facts.append(dict(fact, state=state, phase=phase, wiring=wire, heartbeat_refs=refs,
