@@ -1,0 +1,158 @@
+{
+  "controller": "ctrl-a",
+  "phase_order": [
+    "N",
+    "E"
+  ],
+  "clock_certificates": [
+    {
+      "id": "c-ctrl-a",
+      "device": "ctrl-a",
+      "ticks": [
+        0,
+        1000
+      ],
+      "offset_ms": 0,
+      "error_ms": 0
+    },
+    {
+      "id": "c-loop-a",
+      "device": "loop-a",
+      "ticks": [
+        0,
+        1000
+      ],
+      "offset_ms": 0,
+      "error_ms": 1
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "seq": 0,
+      "tick": 100,
+      "phase": "N"
+    },
+    {
+      "id": "e1",
+      "seq": 1,
+      "tick": 200,
+      "phase": "E"
+    },
+    {
+      "id": "e2",
+      "seq": 2,
+      "tick": 300,
+      "phase": "N"
+    },
+    {
+      "id": "e3",
+      "seq": 3,
+      "tick": 400,
+      "phase": "E"
+    },
+    {
+      "id": "e4",
+      "seq": 4,
+      "tick": 500,
+      "phase": "N"
+    }
+  ],
+  "wiring": [
+    {
+      "id": "w-n",
+      "detector": "loop-a",
+      "phase": "N",
+      "time_ms": [
+        0,
+        450
+      ]
+    },
+    {
+      "id": "w-e",
+      "detector": "loop-a",
+      "phase": "E",
+      "time_ms": [
+        450,
+        900
+      ]
+    }
+  ],
+  "heartbeats": [
+    {
+      "id": "ha1",
+      "detector": "loop-a",
+      "ticks": [
+        20,
+        141
+      ]
+    },
+    {
+      "id": "ha2",
+      "detector": "loop-a",
+      "ticks": [
+        139,
+        281
+      ]
+    },
+    {
+      "id": "ha3",
+      "detector": "loop-a",
+      "ticks": [
+        279,
+        561
+      ]
+    },
+    {
+      "id": "ha4",
+      "detector": "loop-a",
+      "ticks": [
+        559,
+        721
+      ]
+    }
+  ],
+  "arrivals": [
+    {
+      "id": "a-far-green",
+      "detector": "loop-a",
+      "tick": 150
+    },
+    {
+      "id": "a-service-edge",
+      "detector": "loop-a",
+      "tick": 199
+    },
+    {
+      "id": "a-splice",
+      "detector": "loop-a",
+      "tick": 280
+    },
+    {
+      "id": "a-far-red",
+      "detector": "loop-a",
+      "tick": 250
+    },
+    {
+      "id": "a-bucket-edge",
+      "detector": "loop-a",
+      "tick": 380
+    }
+  ],
+  "buckets": [
+    {
+      "id": "main",
+      "time_ms": [
+        50,
+        380
+      ]
+    },
+    {
+      "id": "wide",
+      "time_ms": [
+        0,
+        900
+      ]
+    }
+  ]
+}
